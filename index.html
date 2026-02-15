@@ -748,6 +748,123 @@ padding:8px 18px;
 border-radius:30px;
 font-weight:600;
 }
+.opp-badge{
+border:2px solid #7edaa4;
+color:#3abf73;
+padding:8px 18px;
+border-radius:30px;
+font-weight:600;
+}
+
+
+/* ✅ PASTE RESPONSIVE PATCH HERE */
+/* =========================================
+   RESPONSIVE UPGRADE (NON-DESTRUCTIVE)
+   ========================================= */
+
+.hero h1 {
+    font-size: clamp(32px, 6vw, 68px);
+}
+
+.section-title {
+    font-size: clamp(26px, 4vw, 48px);
+}
+
+.hero-tagline {
+    font-size: clamp(16px, 2.5vw, 22px);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Large Tablets */
+@media (max-width: 1200px) {
+
+    .nav-container { padding: 20px 32px; }
+    .hero { padding: 120px 32px 60px; }
+    .section { padding: 70px 32px; }
+
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .journey-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Tablets */
+@media (max-width: 968px) {
+
+    .nav-links { display: none; }
+
+    .hero {
+        min-height: auto;
+        padding: 120px 28px 50px;
+    }
+
+    .section { padding: 60px 28px; }
+
+    .thesis-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .experience-item {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .experience-highlights { grid-template-columns: 1fr; }
+
+    .publications-grid { grid-template-columns: 1fr; }
+
+    .cta-group {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Phones */
+@media (max-width: 576px) {
+
+    .nav-container { padding: 16px 20px; }
+
+    .logo {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+
+    .hero-label { font-size: 11px; }
+
+    .cta-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+
+    .stat { padding: 36px 20px; }
+    .stat-number { font-size: 40px; }
+
+    .journey-card { padding: 24px; }
+
+    .thesis-image { height: 320px; }
+
+    .contact-card { padding: 28px 20px; }
+
+    .opp-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .opp-profile { width: 100%; }
+
+    .opp-badge { align-self: flex-start; }
+}
 
     </style>
 </head>
