@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jyothi Hiremath — Narrative Strategist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #0a0a0a;
+            --gray: #555555;
+            --light-gray: #999999;
+            --white: #fefefe;
+            --off-white: #f8f8f8;
+            --orange: #e85d04;
+            --orange-dark: #d84a02;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: var(--orange);
+            color: white;
+        }
+
+        /* Orange period styling */
+        .orange-period {
+            color: var(--orange);
+        }
+
+        /* Underline accent */
+        .underline-accent {
+            background: linear-gradient(to right, var(--orange) 0%, var(--orange) 100%);
+            background-size: 100% 3px;
+            background-position: 0 100%;
+            background-repeat: no-repeat;
+            padding-bottom: 4px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(254, 254, 254, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        nav.scrolled {
+            background: rgba(254, 254, 254, 0.95);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--orange);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--black);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--orange);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 50px 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 1100px;
+            text-align: center;
+        }
+
+        .hero-label {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.2s;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 68px;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 32px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.4s;
+        }
+
+        .hero-tagline {
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--gray);
+            max-width: 780px;
+            margin: 0 auto 40px;
+            line-height: 1.5;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.6s;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.8s;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-block;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--orange-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(232, 93, 4, 0.3);
+        }
+
+      .btn-secondary {
+background: #111111;
+    color: white;
+    border: none;
+}
+
+		
+		
+
+        .btn-secondary:hover {
+background: #111111;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+
+        /* Section Styling */
+        .section {
+            padding: 70px 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 24px;
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 800px;
+            line-height: 1.6;
+            margin-bottom: 48px;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            background: rgba(0, 0, 0, 0.05);
+            margin-bottom: 70px;
+        }
+
+        .stat {
+            background: var(--white);
+            padding: 50px 30px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        .stat.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .stat:hover {
+            background: var(--off-white);
+            transform: scale(1.02);
+        }
+
+        .stat-number {
+            font-size: 52px;
+            font-weight: 800;
+            color: var(--orange);
+            display: block;
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Journey Section */
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 36px;
+            margin-top: 48px;
+        }
+
+        .journey-card {
+            padding: 32px;
+            background: var(--off-white);
+            border-left: 4px solid var(--orange);
+            transition: all 0.3s;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .journey-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .journey-card:hover {
+            background: white;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            transform: translateY(-4px);
+        }
+
+        .journey-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--orange);
+            opacity: 0.2;
+            margin-bottom: 16px;
+        }
+
+        .journey-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .journey-description {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--gray);
+        }
+
+        /* SVA Thesis Section */
+        .thesis-section {
+            background: linear-gradient(135deg, rgba(232, 93, 4, 0.05) 0%, rgba(232, 93, 4, 0.02) 100%);
+            padding: 70px 50px;
+        }
+
+        .thesis-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .thesis-image {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f5f5;
+        }
+		
+		button.btn-primary {
+    background: var(--orange);
+    color: white;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+        .thesis-image img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .thesis-details h3 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .thesis-details p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .thesis-meta {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 2px solid var(--orange);
+        }
+
+        .meta-item {
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .meta-label {
+            font-weight: 700;
+            color: var(--black);
+            display: inline-block;
+            min-width: 100px;
+        }
+
+        .meta-value {
+            color: var(--gray);
+        }
+
+        /* Experience Timeline */
+        .experience-timeline {
+            margin-top: 48px;
+        }
+
+        .experience-item {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: 48px;
+            padding: 48px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .experience-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .experience-date {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--light-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-top: 4px;
+        }
+
+        .experience-role {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .experience-org {
+            font-size: 16px;
+            color: var(--orange);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .experience-impact {
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .experience-highlights {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .highlight {
+            font-size: 14px;
+            color: var(--gray);
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .highlight::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--orange);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* Publications Grid */
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .publication-card {
+            padding: 32px;
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .publication-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .publication-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            border-color: var(--orange);
+        }
+
+        a.publication-card:hover .publication-title {
+            color: var(--orange);
+        }
+
+        .publication-category {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 12px;
+        }
+
+        .publication-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .publication-outlet {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .publication-excerpt {
+            font-size: 15px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 50px;
+            background: linear-gradient(135deg, rgba(232, 93, 4, 0.08) 0%, rgba(232, 93, 4, 0.03) 100%);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cta-heading {
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -1.5px;
+            margin-bottom: 24px;
+        }
+
+        .cta-subheading {
+            font-size: 20px;
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        /* Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 60px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-card {
+            padding: 36px 28px;
+            background: var(--white);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: var(--black);
+            display: block;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            border-color: var(--orange);
+        }
+
+        .contact-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .contact-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--light-gray);
+            margin-bottom: 8px;
+        }
+
+        .contact-value {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--off-white);
+            padding: 50px 50px 36px;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            color: var(--gray);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--orange);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero h1 { font-size: 42px; }
+            .section-title { font-size: 32px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .journey-grid { grid-template-columns: 1fr; }
+            .thesis-content { grid-template-columns: 1fr; }
+            .experience-item { grid-template-columns: 1fr; gap: 20px; }
+            .experience-highlights { grid-template-columns: 1fr; }
+            .publications-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .section { padding: 50px 28px; }
+            .nav-container { padding: 20px 28px; }
+            .cta-heading { font-size: 36px; }
+            .footer-content { flex-direction: column; gap: 20px; text-align: center; }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+		.opportunities-tab{
+max-width:1100px;
+margin:0 auto;
+background:#f4f4f4;
+border-radius:20px;
+padding:0;
+overflow:hidden;
+max-height:0;
+transition:max-height .6s ease, padding .4s ease;
+}
+
+.opportunities-tab.open{
+max-height:1000px;
+padding:30px;
+margin-top:20px;
+}
+
+.opp-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+.opp-profile{
+display:flex;
+gap:15px;
+align-items:center;
+}
+
+.opp-avatar{
+width:60px;
+height:60px;
+border-radius:50%;
+}
+
+.opp-badge{
+border:2px solid #7edaa4;
+color:#3abf73;
+padding:8px 18px;
+border-radius:30px;
+font-weight:600;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Jyothi Hiremath</div>
+            <ul class="nav-links">
+                <li><a href="#journey">journey</a></li>
+                <li><a href="#thesis">thesis</a></li>
+                <li><a href="#experience">experience</a></li>
+                <li><a href="#publications">writing</a></li>
+                <li><a href="#connect">connect</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-label">Narrative Strategist × Architect × Storyteller</div>
+            <h1>Translating complexity into clarity through strategic storytelling<span class="orange-period">.</span></h1>
+            <p class="hero-tagline">5+ years building result-driven messaging frameworks across Fortune 500 clients, government projects, and design-driven organizations<span class="orange-period">.</span></p>
+            <div class="cta-group">
+                <a href="#connect" class="btn btn-primary">Let's Collaborate</a>
+                <a href="#experience" class="btn btn-secondary">View Work</a>
+				<button class="btn btn-primary" onclick="toggleOpportunitiesTab()">
+Open to opportunities
+</button>            </div>
+        </div>
+    </section>
+	
+	<!-- Opportunities Expandable Tab -->
+<div id="opportunitiesTab" class="opportunities-tab">
+
+    <div class="opp-header">
+
+        <div class="opp-profile">
+            <!-- <img src="https://i.pravatar.cc/80" class="opp-avatar"> -->
+			            <img src=".\jo_edit.PNG" class="opp-avatar">
+
+            <div>
+                <h3>Jyothi Hiremath</h3>
+                <p>Available for full-time opportunities</p>
+            </div>
+        </div>
+
+        <div class="opp-badge">
+            ● Available Now
+        </div>
+
+    </div>
+
+    <div class="opp-grid">
+
+        <div>
+            <h4>📅 Duration</h4>
+            <p>Effective immediately</p>
+        </div>
+
+        <div>
+            <h4>🌎 Location</h4>
+            <p>Anywhere in USA, preferably NYC</p>
+        </div>
+
+    </div>
+
+</div>
+
+
+    <!-- Stats -->
+    <section class="section">
+        <div class="stats-grid">
+            <div class="stat scale-in">
+                <span class="stat-number">200+</span>
+                <span class="stat-label">Published Articles</span>
+            </div>
+            <div class="stat scale-in" style="transition-delay: 0.1s">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Strategic Campaigns</span>
+            </div>
+            <div class="stat scale-in" style="transition-delay: 0.2s">
+                <span class="stat-number">40%</span>
+                <span class="stat-label">Visibility Growth</span>
+            </div>
+            <div class="stat scale-in" style="transition-delay: 0.3s">
+                <span class="stat-number">67</span>
+                <span class="stat-label">Press Features</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Journey -->
+    <section class="section" id="journey">
+        <div class="section-label">Professional Journey</div>
+        <h2 class="section-title fade-in">Non-linear by design<span class="orange-period">.</span> <span class="underline-accent">Impact-driven</span> at every turn<span class="orange-period">.</span></h2>
+        <p class="section-description fade-in">Each transition has strengthened my transferable skills and business value<span class="orange-period">.</span> Architecture taught me strategic thinking<span class="orange-period">.</span> Communications lets me apply it at scale<span class="orange-period">.</span></p>
+
+        <div class="journey-grid">
+            <div class="journey-card">
+                <div class="journey-number">01</div>
+                <h3 class="journey-title">Architectural Education</h3>
+                <p class="journey-description">Built foundation in spatial systems, stakeholder coordination, technical translation<span class="orange-period">.</span></p>
+            </div>
+
+            <div class="journey-card" style="transition-delay: 0.1s">
+                <div class="journey-number">02</div>
+                <h3 class="journey-title">Strategic Pivot</h3>
+                <p class="journey-description">Became the translator bridging technical expertise and compelling narrative<span class="orange-period">.</span></p>
+            </div>
+
+            <div class="journey-card" style="transition-delay: 0.2s">
+                <div class="journey-number">03</div>
+                <h3 class="journey-title">Narrative Leadership</h3>
+                <p class="journey-description">Building frameworks that scale, withstand trends, and drive business outcomes<span class="orange-period">.</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SVA Thesis Section -->
+    <section class="thesis-section" id="thesis">
+        <div class="thesis-content">
+            <div class="thesis-image">
+                <img src=".\Magazine_2NDFL.gif" alt="2NDFL Magazine - Dispatches from D-Crit">
+            </div>
+            <div class="thesis-details fade-in">
+                <div class="section-label">SVA Thesis & Research</div>
+                <h3>Design Research, Writing, and Criticism<span class="orange-period">.</span></h3>
+                <p>Deepened practice in <span class="underline-accent">narrative architecture</span>—examining how stories shape perception and drive cultural change<span class="orange-period">.</span></p>
+                <p>Led communications strategy for <strong>2NDFL: Dispatches from D-Crit Print Publication</strong> magazine launch, generating 15K+ monthly impressions and 67% visibility growth<span class="orange-period">.</span></p>
+                
+                <div class="thesis-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Program:</span>
+                        <span class="meta-value">MA Design Research, Writing & Criticism</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Institution:</span>
+                        <span class="meta-value">School of Visual Arts, New York</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Focus:</span>
+                        <span class="meta-value">Narrative Strategy, Design Criticism, Strategic Communications</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Key Project:</span>
+                        <span class="meta-value">2NDFL Design Journal — Communications Lead</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experience">
+        <div class="section-label">Impact & Experience</div>
+        <h2 class="section-title fade-in"> Building sustainable business value through <span class="underline-accent">clarity, empathy, and purpose</span><span class="orange-period">.</span></h2>
+
+        <div class="experience-timeline">
+            <div class="experience-item">
+                <div class="experience-date">May 2025<br>Present</div>
+                <div>
+                    <h3 class="experience-role">Communications & Brand Strategist</h3>
+                    <p class="experience-org">School of Visual Arts, NYC</p>
+                    <p class="experience-impact">Leading strategic communications for MA Design Research program<span class="orange-period">.</span> Built messaging framework for Speculative AI launch<span class="orange-period">.</span> Co-led 28-day sprint launching 2NDFL magazine<span class="orange-period">.</span> Generated 15K+ monthly impressions<span class="orange-period">.</span></p>
+                    <div class="experience-highlights">
+                        <div class="highlight">Editorial content and press releases</div>
+                        <div class="highlight">67% visibility growth in 6 months</div>
+                        <div class="highlight">Cross-functional team coordination (9 members)</div>
+                        <div class="highlight">Media kit development and social strategy</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-date">Oct 2024<br>Apr 2025</div>
+                <div>
+                    <h3 class="experience-role">Social Media & Events Manager</h3>
+                    <p class="experience-org">MA Design Research, Writing & Criticism</p>
+                    <p class="experience-impact">Increased program visibility 40% in 2 months through strategic event planning and integrated campaigns<span class="orange-period">.</span> Orchestrated media engagement and partnership development<span class="orange-period">.</span></p>
+                    <div class="experience-highlights">
+                        <div class="highlight">12+ visibility-driving events</div>
+                        <div class="highlight">Outreach reports and media coordination</div>
+                        <div class="highlight">Strategy decks for institutional partnerships</div>
+                        <div class="highlight">Content narratives for web and social</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-date">Jan 2024<br>Jun 2024</div>
+                <div>
+                    <h3 class="experience-role">Communication & PR Manager</h3>
+                    <p class="experience-org">Epistle Communications (Global: NYC, Dubai, India)</p>
+                    <p class="experience-impact">Directed strategies for Fortune 500 architecture clients including Brookfield, Arup, Edifice Consultants<span class="orange-period">.</span> Secured 67+ press features for single government project across national and international platforms<span class="orange-period">.</span></p>
+                    <div class="experience-highlights">
+                        <div class="highlight">Multi-market campaign coordination</div>
+                        <div class="highlight">Messaging frameworks and media kits</div>
+                        <div class="highlight">Award submission strategy</div>
+                        <div class="highlight">Cross-continental execution</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-date">Jan 2023<br>Dec 2023</div>
+                <div>
+                    <h3 class="experience-role">Marketing & Editorial Lead</h3>
+                    <p class="experience-org">Epistle Communications</p>
+                    <p class="experience-impact">Executed 15+ cross-channel campaigns ensuring brand consistency<span class="orange-period">.</span> Achieved 125% organic social growth through strategic storytelling<span class="orange-period">.</span> Won 4 awards, secured 2 international shortlistings<span class="orange-period">.</span></p>
+                    <div class="experience-highlights">
+                        <div class="highlight">Press releases and campaign briefs</div>
+                        <div class="highlight">Content strategy alignment</div>
+                        <div class="highlight">Media outreach and reporting</div>
+                        <div class="highlight">Brand voice development</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section class="section" id="publications">
+        <div class="section-label">Published Writing</div>
+        <h2 class="section-title fade-in">200+ articles translating <span class="underline-accent">complex systems</span> into accessible narratives<span class="orange-period">.</span></h2>
+
+        <div class="publications-grid">
+            <a href="https://www.printmag.com/daily-heller/the-daily-heller-next-stop-the-fl2nd-design-writing-journal/" target="_blank" class="publication-card" style="text-decoration: none; color: var(--black);">
+                <p class="publication-category">Design Journal</p>
+                <h3 class="publication-title">Out Now! 2NDFL: Dispatches from D-Crit</h3>
+                <p class="publication-outlet">Print Magazine Feature</p>
+                <p class="publication-excerpt">Bridging academic research and public discourse through design thinking<span class="orange-period">.</span></p>
+            </a>
+
+            <a href="https://www.printmag.com/publication-design/underground-ink-indias-queer-magazines/" target="_blank" class="publication-card" style="text-decoration: none; color: var(--black); transition-delay: 0.1s">
+                <p class="publication-category">Cultural Analysis</p>
+                <h3 class="publication-title">Underground Ink: India's Queer Magazines</h3>
+                <p class="publication-outlet">Print Magazine</p>
+                <p class="publication-excerpt">How LGBTQ+ publications shaped cultural evolution and community identity<span class="orange-period">.</span></p>
+            </a>
+
+            <a href="https://www.theestablished.com/culture/entertainment/can-crunchyroll-beat-netflix-in-anime-content-with-dubs-in-hindi" target="_blank" class="publication-card" style="text-decoration: none; color: var(--black); transition-delay: 0.2s">
+                <p class="publication-category">Cross-Cultural Study</p>
+                <h3 class="publication-title">Multilingualism in Anime Culture</h3>
+                <p class="publication-outlet">The Established</p>
+                <p class="publication-excerpt">Language diversity and narrative accessibility in Japanese animation<span class="orange-period">.</span></p>
+            </a>
+
+            <div class="publication-card" style="transition-delay: 0.3s">
+                <p class="publication-category">Architecture & Design</p>
+                <h3 class="publication-title">Featured Bylines</h3>
+                <p class="publication-outlet">Leading Publications</p>
+                <p class="publication-excerpt">Vogue India • ArchDaily • Metropolis Magazine • The Print • AD • Indesign Live • LiveMint • The Hindu • Deccan Herald • Architecture Live!</p>
+            </div>
+
+            <div class="publication-card" style="transition-delay: 0.4s">
+                <p class="publication-category">Sustainability Focus</p>
+                <h3 class="publication-title">Climate & Built Environment</h3>
+                <p class="publication-outlet">Various Publications</p>
+                <p class="publication-excerpt">Net-zero energy, decarbonization strategies, sustainable architecture<span class="orange-period">.</span></p>
+            </div>
+
+            <div class="publication-card" style="transition-delay: 0.5s">
+                <p class="publication-category">Government Projects</p>
+                <h3 class="publication-title">Infrastructure & Policy</h3>
+                <p class="publication-outlet">National & International Press</p>
+                <p class="publication-excerpt">67+ features on infrastructure development, conservation, and smart growth<span class="orange-period">.</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="connect">
+        <div class="cta-content">
+            <h2 class="cta-heading fade-in">Let's collaborate to create <span class="underline-accent">tangible outcomes</span><span class="orange-period">.</span></h2>
+            <p class="cta-subheading fade-in">Seeking opportunities where communication shapes product positioning and narrative drives strategy<span class="orange-period">.</span></p>
+        </div>
+
+        <div class="contact-grid">
+            <a href="mailto:jhiremath@sva.edu" class="contact-card">
+                <span class="contact-icon">✉</span>
+                <div class="contact-label">Email</div>
+                <div class="contact-value">jhiremath@sva.edu</div>
+            </a>
+            
+            <a href="tel:+15513591757" class="contact-card">
+                <span class="contact-icon">📱</span>
+                <div class="contact-label">Phone</div>
+                <div class="contact-value">+1 (551) 359-1757</div>
+            </a>
+            
+            <a href="https://www.linkedin.com/in/jyothi-hiremath/" target="_blank" class="contact-card">
+                <span class="contact-icon">💼</span>
+                <div class="contact-label">LinkedIn</div>
+                <div class="contact-value">Jyothi Hiremath</div>
+            </a>
+            
+            <a href="https://drive.google.com/drive/folders/1pUA-IZHQzpT2chVjvzt-3trFvqbqXpxL?usp=sharing" target="_blank" class="contact-card">
+                <span class="contact-icon">📂</span>
+                <div class="contact-label">Portfolio</div>
+                <div class="contact-value">View Work</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">© 2026 Jyothi Hiremath — Narrative Strategist based in New York, NY</p>
+            <div class="footer-links">
+                <a href="#journey">journey</a>
+                <a href="#thesis">thesis</a>
+                <a href="#experience">experience</a>
+                <a href="#publications">writing</a>
+                <a href="#connect">connect</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -80px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in, .stat, .journey-card, .experience-item, .publication-card').forEach(el => {
+            observer.observe(el);
+        });
+		function toggleOpportunitiesTab(){
+const tab=document.getElementById("opportunitiesTab");
+tab.classList.toggle("open");
+}
+
+    </script>
+</body>
+</html>
