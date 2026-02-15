@@ -610,6 +610,11 @@ background: #111111;
             text-decoration: none;
             color: var(--black);
             display: block;
+			
+			    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
         }
 
         .contact-card:hover {
@@ -748,13 +753,7 @@ padding:8px 18px;
 border-radius:30px;
 font-weight:600;
 }
-.opp-badge{
-border:2px solid #7edaa4;
-color:#3abf73;
-padding:8px 18px;
-border-radius:30px;
-font-weight:600;
-}
+
 
 
 /* ✅ PASTE RESPONSIVE PATCH HERE */
@@ -845,6 +844,19 @@ img {
         max-width: 280px;
         text-align: center;
     }
+	
+	.contact-card {
+    width: 100%;
+}
+
+.contact-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.contact-value {
+    word-break: break-word;
+}
 
     .stat { padding: 36px 20px; }
     .stat-number { font-size: 40px; }
